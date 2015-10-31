@@ -343,12 +343,12 @@ if [ -z "$URL_PROTOCOL" ]; then
  export URL_PROTOCOL="http://"
 fi
 
-# set the port numbers with --publish
-if [ -z "$PORT" ]; then
-    export PUBLISH_PORT="" # if no port is selected, then no port is needed!
-else
-    export PUBLISH_PORT=$(get_port_numbers "${PORT}")
-fi
+export PUBLISH_PORT="" # if no port is selected, then no port is needed!
+## set the port numbers with --publish
+#if [ -z "$PORT" ]; then
+#else
+#    export PUBLISH_PORT=$(get_port_numbers "${PORT}")
+#fi
 
 if [ ! -z ${DEPLOY_PROPERTY_FILE} ]; then
     echo "export SINGLE_CONTAINER_NAME="${CONTAINER_NAME}_${BUILD_NUMBER}"" >> "${DEPLOY_PROPERTY_FILE}"
